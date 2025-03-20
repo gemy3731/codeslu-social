@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter'
 const Typing = () => {
   return (
     <div>
-        <h1 className="text-4xl font-extrabold  mb-6 text-center text-transparent bg-clip-text bg-gradient-to-br from-[#a6a3ff] to-slate-50">
+        <h1 className="text-4xl font-extrabold  mb-6  text-white">
         <Typewriter
           words={[
             'Connect with people who vibe like you 🌍',
