@@ -17,6 +17,7 @@ const config = {
       },
       screens: {
         'xs': '380px',
+        
       },
     },
   },
