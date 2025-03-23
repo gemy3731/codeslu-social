@@ -28,7 +28,7 @@ console.log(formState)
   return (
     <div
       id="login"
-      className="bgLogin relative min-h-screen w-full bg-cover bg-center"
+      className="bgLogin relative min-h-screen w-full bg-cover bg-center overflow-x-hidden"
       style={{ backgroundImage: `url(${imgs[currentImgIndex].src})` }}
     >
       <div className="bgLayout flex items-center p-4">
@@ -46,10 +46,11 @@ console.log(formState)
               </div>
               <Typing />
             </div>
+            <div className="glass-form lg:min-w-[500px] col-span-1 md:ml-auto py-14 px-10 pt-8">
             {formState==='login' && <Login dispatch={dispatch}/>}
             {formState==='register' && <Register dispatch={dispatch}/>}
             {formState==='forgotPass' && <ForgotPass dispatch={dispatch}/>}
-            
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-"use client";
+
 import { setFormState } from "@/lib/Redux/authFormStateSlice";
 import { Action, Dispatch, UnknownAction } from "@reduxjs/toolkit";
 import { useFormik } from "formik";
@@ -68,7 +68,7 @@ const Register = ({
   });
 
   return (
-    <div className="glass-form lg:min-w-[500px] col-span-1 md:ml-auto py-14 px-10 pt-8">
+    <div className="login-form">
       <form onSubmit={formik.handleSubmit} className="mb-10">
         <h2 className="font-bold header mb-4 text-white">
           Register to CodeSlu!
