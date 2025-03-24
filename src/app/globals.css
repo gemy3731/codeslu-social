@@ -124,7 +124,7 @@ form .header{
 .login-form{
   transform: rotateY(180deg);
   opacity: 0;
-  animation: login 1s ease-in 1s 1 normal forwards;
+  animation: login 1s ease-in 1 normal forwards;
 }
 
 @keyframes login {
