@@ -5,7 +5,7 @@ import img1 from "@/app/assets/logo.png";
 import img4 from "@/app/assets/backgroundLogin.jpg";
 import img2 from "@/app/assets/bgLogin2.jpg";
 import img3 from "@/app/assets/bgLogin3.jpg";
-import Typing from "@/app/_components/register/Typing";
+import Typing from "@/app/_components/auth/Typing";
 import Login from "@/app/_components/auth/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { store } from './../../../lib/Redux/Store';
@@ -28,7 +28,7 @@ console.log(formState)
   return (
     <div
       id="login"
-      className="bgLogin relative min-h-screen w-full bg-cover bg-center overflow-x-hidden"
+      className="bgLogin relative min-h-screen w-full bg-cover bg-center"
       style={{ backgroundImage: `url(${imgs[currentImgIndex].src})` }}
     >
       <div className="bgLayout flex items-center p-4">
