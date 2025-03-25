@@ -37,7 +37,7 @@ const Sidebar = () => {
       setTimeout(() => {
         setIsOpenDelay(true);
         sidebar?.classList.add("min-w-[160px]");
-      }, 1000);
+      }, 300);
     }
   };
   return (
@@ -45,8 +45,8 @@ const Sidebar = () => {
       id="sideBar"
       className={
         isOpen
-          ? " bg-[#fff] overflow-y-auto overflow-x-hidden rounded-tr-[2rem] px-5 py-10 relative transition-[width] duration-[5s] ease-in-out isOpenTrue"
-          : " py-10  relative rounded-tr-[2rem] min-h-screen bg-[#fff] group  is-open isOpenFalse"
+          ? " bg-[#fff] overflow-y-auto overflow-x-hidden rounded-tr-[2rem] px-5 py-10 relative z-50 transition-[width] duration-[5s] ease-in-out isOpenTrue"
+          : " py-10  relative rounded-tr-[2rem] min-h-screen bg-[#fff] group  is-open isOpenFalse z-50"
       }
     >
       <div className="h-[100%] ">

@@ -145,7 +145,7 @@ form .header{
   width: 60px;
   /* padding-inline: 1.5rem; */
   box-shadow: 4px 0px 10px -4px rgba(0, 0, 0, 0.2);
-  transition: width 1s ease-in-out;
+  transition: width 0.5s ease-in-out;
   scrollbar-width: none;
   -ms-overflow-style: none; 
 }
@@ -172,4 +172,12 @@ form .header{
 
 #sidebar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+.searchbar input{
+  border-radius: 3vh;
+  background: #ffffff;
+  &:focus{
+    border-color: #4c42ab;
+    --tw-ring-color: #4c42ab;
+  }
 }
