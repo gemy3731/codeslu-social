@@ -181,3 +181,73 @@ form .header{
     --tw-ring-color: #4c42ab;
   }
 }
+div[role='dialog'] > div{
+  border-radius: 30px;
+  background-color: #171717;
+  padding: 0;
+}
+div[role='dialog']{
+  border-radius: 30px;
+  padding: 0;
+}
+div[role='dialog']:focus-visible{
+  border:none;
+  outline: 0;
+}
+button[aria-label="Close"]{
+  margin-right: 20px;
+  margin-top: 4px;
+}
+button[aria-label="Close"]:hover{
+  background-color: transparent;
+  color:white;
+}
+
+/* .progress-container {
+  width: 300px;
+  height: 5px;
+  background-color: #d4d4d4;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #ffffff;
+} */
+
+.myStoryContainer{
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.myStoryInput{
+  position: relative;
+  width: 100%;
+  /* padding: 0.8rem; */
+  border: none;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  &:focus{
+    border-color: #4c42ab;
+    --tw-ring-color: #4c42ab;
+  }
+}
+
+@keyframes progress-bar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+  
+}

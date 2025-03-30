@@ -18,13 +18,13 @@
 }
 
 .keen-slider__slide {
-  width: 80px !important;
-  height: 80px !important;
+  width: 85px !important;
+  height: 85px !important;
   border-radius: 50% !important;
-  padding: 3px !important;
-  min-height: 0 !important;
-  min-width: 0 !important;
-  max-width: 80px !important;
+  /* padding: 3px !important; */
+  /* min-height: 0 !important; */
+  /* min-width: 0 !important; */
+  /* max-width: 80px !important; */
   border: 4px solid transparent;
   display: flex;
   justify-content: center;

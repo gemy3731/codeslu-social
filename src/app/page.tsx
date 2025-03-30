@@ -6,7 +6,7 @@ export default function Page() {
     <div className="flex gap-4  bg-[#f6faff] h-screen">
       <Sidebar />
 
-      <div id="main" className=" overflow-y-auto  flex-1 bg-[#f6faff] min-h-screen relative" >
+      <div id="main" className=" overflow-y-auto  flex-1 bg-[#f6faff] min-h-screen " >
         <div className=" mx-auto py-3 px-4 h-[300vh]">
         <Home/>
 

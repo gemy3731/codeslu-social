@@ -4,9 +4,10 @@ import StoriesBar from "./StoriesBar";
 
 
 
+
 const Home = () => {
   return (
-    <div className="relative">
+    <div className="">
       <Navbar />
       <div className="mt-[100px] ">
       <StoriesBar/>
