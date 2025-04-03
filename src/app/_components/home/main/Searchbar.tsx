@@ -6,7 +6,7 @@ const Searchbar = () => {
     <div className="md:w-[30%] w-full">
       <div className="mb-2 block">
       </div>
-      <TextInput id="searchbar" type="search" rightIcon={CiSearch} placeholder="Search..." className="searchbar ring-black" />
+      <TextInput id="searchbar" type="search" rightIcon={CiSearch} placeholder="Search..." className="searchbar" />
     </div>
   )
 }

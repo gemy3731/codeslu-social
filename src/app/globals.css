@@ -188,10 +188,11 @@ form .header{
 }
 .searchbar input{
   border-radius: 3vh;
-  background: #ffffff;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.173) !important;
   &:focus{
-    border-color: #4c42ab;
-    --tw-ring-color: #4c42ab;
+    border-color: #4c42ab !important;
+    --tw-ring-color: #4c42ab !important;
   }
 }
 .sidebarArrow{
