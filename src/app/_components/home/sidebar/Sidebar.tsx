@@ -2,41 +2,54 @@
 import logoImg from "@/app/assets/logo.png";
 import Image from "next/image";
 import { IoIosArrowBack } from "react-icons/io";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 import AccountSidebar from "./AccountSidebar";
 import GroupSidebar from "./GroupSidebar";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { setSidebarWidth } from "@/lib/Redux/sidebar";
+
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isLarge, setIsLarge] = useState<boolean>(true);
   const [isOpenDelay, setIsOpenDelay] = useState<boolean>(true);
   const sidebar = document.querySelector("#sideBar");
   const dispatch = useDispatch();
-  
-  
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 1200) {
+        setIsOpen(false);
+        setIsOpenDelay(false);
+        setIsLarge(false);
+      } else {
+        setIsOpen(true);
+        setIsOpenDelay(true);
+        setIsLarge(true);
+      }
+    });
+  }, []);
+
   if (sidebar) {
-    const observer = new ResizeObserver(entries => {
+    const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const width = entry.contentRect.right;
-        // console.log('Sidebar resized to:', width + 'px');
         dispatch(setSidebarWidth(width));
       }
     });
     observer.observe(sidebar);
   } else {
-    console.log('Sidebar element not found!');
+    console.log("Sidebar element not found!");
   }
-  
 
   const handleSidebarStatus = () => {
     setIsOpen(!isOpen);
     if (isOpen) {
       setIsOpenDelay(false);
-      sidebar?.classList.remove("min-w-[160px]");
+      sidebar?.classList.remove("min-w-[200px]");
     } else {
       setTimeout(() => {
         setIsOpenDelay(true);
-        sidebar?.classList.add("min-w-[160px]");
+        sidebar?.classList.add("min-w-[200px]");
       }, 300);
     }
   };
@@ -45,9 +58,10 @@ const Sidebar = () => {
       id="sideBar"
       className={
         isOpen
-          ? " bg-[#fff] overflow-y-auto rounded-tr-[2rem] px-5 transition-[width] duration-[5s] ease-in-out isOpenTrue"
-          : "  rounded-tr-[2rem] min-h-screen bg-[#fff] group  is-open isOpenFalse"
+          ? `isOpenTrue ${isOpenDelay&&'min-w-[200px]'}`
+          : "group  is-open isOpenFalse"
       }
+     
     >
       <div className="sidebarContent h-[100%] overflow-x-visible overflow-y-auto">
         <div className="flex items-center justify-center gap-2">
@@ -72,14 +86,17 @@ const Sidebar = () => {
         </div>
         <AccountSidebar isOpenDelay={isOpenDelay} />
         <GroupSidebar isOpenDelay={isOpenDelay} />
-        
+
         {/* {Arrow} */}
-        <div
+        {isLarge&&(
+          <div
           className="sidebarArrow text-[#4c42ab] absolute top-14 right-[-8px] text-[20px] group-[.is-open]:rotate-180 bg-white border-[ #e0e0e0] border-[1px] rounded-full flex justify-center items-center w-[20px] h-[20px] cursor-pointer transition-all duration-300 ease-in-out"
           onClick={handleSidebarStatus}
         >
           <IoIosArrowBack />
         </div>
+        )}
+        
       </div>
     </div>
   );

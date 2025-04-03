@@ -147,12 +147,12 @@ form .header{
   transition: width 0.5s ease-in-out;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  /* overflow-x: visible;
-  overflow-y: auto;  */
+  background-color: #ffffff;
   overflow: visible;
   position: relative;
   z-index: 50;
   padding-block: 2.5rem;
+  border-top-right-radius: 2rem;
 }
 .sidebarContent{
   scrollbar-width: none;
@@ -160,7 +160,11 @@ form .header{
 }
 #sideBar.isOpenTrue { 
   width: 14%;
-  box-shadow: 4px 0px 10px -4px rgba(0, 0, 0, 0.2);
+  padding-inline: 20px;
+}
+#sideBar.isOpenFalse { 
+  width: 60px;
+  min-height: 100vh;
 }
 .sidebarIcon:hover{
   transform: scale(1.5);

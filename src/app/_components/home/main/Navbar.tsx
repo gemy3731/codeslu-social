@@ -11,7 +11,7 @@ const Navbar = () => {
         (reduxStore: ReturnType<typeof store.getState>) => reduxStore.sidebarWidth
       );
       
-      console.log(sidebarWidth, "sidebarWidth");
+      // console.log(sidebarWidth, "sidebarWidth");
 
       
   return (
