@@ -45,11 +45,11 @@ const Sidebar = () => {
       id="sideBar"
       className={
         isOpen
-          ? " bg-[#fff] overflow-y-auto overflow-x-hidden rounded-tr-[2rem] px-5 py-10 relative z-50 transition-[width] duration-[5s] ease-in-out isOpenTrue"
-          : " py-10  relative rounded-tr-[2rem] min-h-screen bg-[#fff] group  is-open isOpenFalse z-50"
+          ? " bg-[#fff] overflow-y-auto rounded-tr-[2rem] px-5 transition-[width] duration-[5s] ease-in-out isOpenTrue"
+          : "  rounded-tr-[2rem] min-h-screen bg-[#fff] group  is-open isOpenFalse"
       }
     >
-      <div className="h-[100%] ">
+      <div className="sidebarContent h-[100%] overflow-x-visible overflow-y-auto">
         <div className="flex items-center justify-center gap-2">
           <Image
             src={logoImg}
@@ -75,7 +75,7 @@ const Sidebar = () => {
         
         {/* {Arrow} */}
         <div
-          className="text-[#4c42ab] absolute top-14 right-[-5px] text-[20px] group-[.is-open]:rotate-180"
+          className="sidebarArrow text-[#4c42ab] absolute top-14 right-[-8px] text-[20px] group-[.is-open]:rotate-180 bg-white border-[ #e0e0e0] border-[1px] rounded-full flex justify-center items-center w-[20px] h-[20px] cursor-pointer transition-all duration-300 ease-in-out"
           onClick={handleSidebarStatus}
         >
           <IoIosArrowBack />

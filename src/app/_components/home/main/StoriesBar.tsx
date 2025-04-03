@@ -106,6 +106,22 @@ function StoriesBar() {
       },
       stories,
     },
+    {
+      header: {
+        heading: "Mustafa",
+        date: "12h",
+        image: img4
+      },
+      stories,
+    },
+    {
+      header: {
+        heading: "Mustafa",
+        date: "12h",
+        image: img4
+      },
+      stories,
+    },
   ];
 
   const handleFeedComplete = (direction: 'next' | 'prev') => {
@@ -155,6 +171,7 @@ function StoriesBar() {
             gap: 10,
             pagination: false,
             drag: true,
+            arrows: false,
           }}
         >
           {storyFeeds.map((feed, i) => (

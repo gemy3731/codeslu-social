@@ -143,11 +143,20 @@ form .header{
 
 #sideBar {
   width: 60px;
-  /* padding-inline: 1.5rem; */
   box-shadow: 4px 0px 10px -4px rgba(0, 0, 0, 0.2);
   transition: width 0.5s ease-in-out;
   scrollbar-width: none;
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
+  /* overflow-x: visible;
+  overflow-y: auto;  */
+  overflow: visible;
+  position: relative;
+  z-index: 100;
+  padding-block: 2.5rem;
+}
+.sidebarContent{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 #sideBar.isOpenTrue { 
   width: 14%;
@@ -180,6 +189,14 @@ form .header{
     border-color: #4c42ab;
     --tw-ring-color: #4c42ab;
   }
+}
+.sidebarArrow{
+  box-shadow:
+  inset 2px 2px 4px rgba(0,0,0,0.1),
+  inset -2px -2px 4px rgba(255,255,255,0.9);
+  text-shadow: 
+  1px 1px 2px rgba(0,0,0,0.1),
+  -1px -1px 2px rgba(255,255,255,0.9);
 }
 div[role='dialog'] > div{
   border-radius: 30px;
