@@ -11,7 +11,6 @@ const Home = () => {
       <Navbar />
       <div className="mt-[180px] md:mt-[100px] ">
       <StoriesBar/>
-
       </div>
     </div>
   );

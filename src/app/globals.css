@@ -273,3 +273,8 @@ button[aria-label="Close"]:hover{
   }
   
 }
+.sectionHeader{
+  font-size: 2rem;
+  font-weight: 600;
+  color:#4c42ab ;
+}
