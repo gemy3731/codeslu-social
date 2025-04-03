@@ -104,7 +104,7 @@ const MyStory = ({ storyFeed, onComplete }: MyStoryProps) => {
 
   return (
     <>
-      <div className="h-screen flex items-center justify-center bg-transparent">
+      <div className="h-screen flex items-center justify-center bg-transparent z-[500]">
         <div className="myStoryContainer relative w-[400px] bg-[#0000008e] rounded-2xl pb-[15px] pt-[15px] px-[25px]">
           {/* Upper Part */}
           <div className="upperPart flex flex-col gap-3 mb-[25px]">
@@ -215,7 +215,7 @@ const MyStory = ({ storyFeed, onComplete }: MyStoryProps) => {
               ))}
             </div>
 
-            {/* أزرار التنقل */}
+            {/* Arrows */}
             <button
               onClick={handlePreviousStory}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/30 text-white p-2 rounded-full z-10"
@@ -234,7 +234,7 @@ const MyStory = ({ storyFeed, onComplete }: MyStoryProps) => {
           {/* Lower Part */}
           <div className="flex items-center gap-6 mt-[10px]">
             <div className="relative w-full">
-              <input type="text" className="myStoryInput my-2" />
+              <input type="text" className="myStoryInput my-2 pr-10" />
               <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[24px] text-white">
                 <LuSendHorizontal />
               </button>

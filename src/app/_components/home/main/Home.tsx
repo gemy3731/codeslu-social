@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="">
       <Navbar />
-      <div className="mt-[100px] ">
+      <div className="mt-[180px] md:mt-[100px] ">
       <StoriesBar/>
 
       </div>

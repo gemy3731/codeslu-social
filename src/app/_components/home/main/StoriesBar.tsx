@@ -148,11 +148,11 @@ function StoriesBar() {
   return (
     <>
       <div className="flex gap-4 justify-start">
-        <div className="keen-slider__slide relative overflow-hidden cursor-pointer">
+        <div className="keen-slider__slide relative overflow-hidden cursor-pointer min-w-[70px] min-h-[70px]">
           <Image
             src={img}
             alt=""
-            className="w-full h-full border-[#f6faff] border-[3px] rounded-full"
+            className="w-full min-w-[70px] min-h-[70px] h-full border-[#f6faff] border-[3px] rounded-full"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-[#00000056] flex justify-center items-center text-white">
             <FaPlus />
