@@ -4,6 +4,7 @@ import "./globals.css";
 import ThemeProviderWrapper from "./_components/ThemeProviderWrapper";
 
 import { ReduxProvider } from "./ReduxProvider";
+import Sidebar from "./_components/home/sidebar/Sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} darkTheme `}
+        className={`${geistSans.variable} ${geistMono.variable} darkTheme flex gap-4  bg-[#f6faff] h-screen`}
       >
         <ThemeProviderWrapper>
-          <ReduxProvider>{children}</ReduxProvider>
+          <ReduxProvider>
+            <Sidebar />
+            <div id="main" className=" overflow-y-auto  flex-1 bg-[#f6faff] min-h-screen ">
+            {children}
+            </div>
+            </ReduxProvider>
         </ThemeProviderWrapper>
       </body>
     </html>

@@ -70,7 +70,7 @@ const Sidebar = () => {
             alt="logo"
             className={
               isOpenDelay
-                ? "w-[50px] h-[50px] rounded-full shadow-lg group-[.is-open]:w-[30px] group-[.is-open]:h-[30px]"
+                ? "w-[50px] h-[50px] bg-white shadow-lg group-[.is-open]:w-[30px] group-[.is-open]:h-[30px]"
                 : "block w-[25px] h-[25px]"
             }
           ></Image>
