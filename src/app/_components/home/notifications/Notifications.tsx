@@ -1,9 +1,12 @@
+// "use client"
+
 import { HiDotsHorizontal } from "react-icons/hi";
 import img from "@/app/assets/profile.jpg";
 import img2 from "@/app/assets/backgroundLogin.jpg";
 import img3 from "@/app/assets/bgLogin2.jpg";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
+// import { useEffect } from "react";
 
 const notifis = [
   {
@@ -48,6 +51,9 @@ const notifis = [
 ];
 
 const Notifications = () => {
+
+  
+
   return (
     <section className=" container mx-auto flex justify-center items-start py-10 sm:px-10">
       <div className="bg-white  max-w-[750px] w-full p-6 rounded-3xl shadow-xl">
@@ -69,7 +75,7 @@ const Notifications = () => {
                   alt=""
                   className="w-[30px] sm:w-[50px] h-[30px] sm:h-[50px] text-[14px] sm:text-[16px] rounded-full"
                 ></Image>
-                <p>
+                <p className='text-black'>
                   <span className="font-semibold text-[16px] sm:text-[18px]">
                     {notification.name}{" "}
                   </span>
