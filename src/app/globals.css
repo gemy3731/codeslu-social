@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --main-color:#4c42ab;
 }
 *{
   padding: 0;
@@ -191,8 +192,8 @@ form .header{
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.173) !important;
   &:focus{
-    border-color: #4c42ab !important;
-    --tw-ring-color: #4c42ab !important;
+    border-color: --main-color !important;
+    --tw-ring-color: --main-color !important;
   }
 }
 .sidebarArrow{
@@ -259,8 +260,8 @@ button[aria-label="Close"]:hover{
   z-index: 10;
   transform: translateZ(0);
   &:focus{
-    border-color: #4c42ab;
-    --tw-ring-color: #4c42ab;
+    border-color: --main-color;
+    --tw-ring-color: --main-color;
   }
 }
 
@@ -276,5 +277,8 @@ button[aria-label="Close"]:hover{
 .sectionHeader{
   font-size: 2rem;
   font-weight: 600;
-  color:#4c42ab ;
+  color:--main-color ;
+}
+div[role='progressbar'] > div > div{
+  background-color:var(--main-color) ;
 }

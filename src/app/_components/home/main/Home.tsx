@@ -7,9 +7,9 @@ import StoriesBar from "./StoriesBar";
 
 const Home = () => {
   return (
-    <div className="">
+    <div className="h-[200vh]">
       <Navbar />
-      <div className="mt-[180px] md:mt-[100px] ">
+      <div className="mt-[80px] md:mt-[30px] container mx-auto px-10 ">
       <StoriesBar/>
       </div>
     </div>
