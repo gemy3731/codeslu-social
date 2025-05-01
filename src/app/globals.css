@@ -6,13 +6,27 @@
   --background: #ffffff;
   --foreground: #171717;
   --main-color:#4c42ab;
+  --header-gradient: linear-gradient(to right bottom, #4c42ab, #bbb4ff);
 }
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: #888 #ffffff;
 }
-
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
 .header{
   font-size: clamp(24px,5vw,5rem);
 }
@@ -192,8 +206,8 @@ form .header{
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.173) !important;
   &:focus{
-    border-color: --main-color !important;
-    --tw-ring-color: --main-color !important;
+    border-color: var(--main-color) !important;
+    --tw-ring-color: var(--main-color) !important;
   }
 }
 .sidebarArrow{
@@ -260,8 +274,8 @@ button[aria-label="Close"]:hover{
   z-index: 10;
   transform: translateZ(0);
   &:focus{
-    border-color: --main-color;
-    --tw-ring-color: --main-color;
+    border-color: var(--main-color);
+    --tw-ring-color: var(--main-color);
   }
 }
 
@@ -277,8 +291,17 @@ button[aria-label="Close"]:hover{
 .sectionHeader{
   font-size: 2rem;
   font-weight: 600;
-  color:--main-color ;
+  background-clip: text;
+  color:transparent;
+  background-image: var(--header-gradient);
 }
 div[role='progressbar'] > div > div{
   background-color:var(--main-color) ;
+}
+[input-emoji]{ 
+  position: absolute;
+  bottom:18px;
+  left:10px;
+  /* transform: translateY(-50%); */
+  font-size: 22px;
 }

@@ -1,4 +1,5 @@
 
+import RightSidebar from "../rightSidebar/RightSidebar";
 import Navbar from "./Navbar";
 import StoriesBar from "./StoriesBar";
 
@@ -11,6 +12,7 @@ const Home = () => {
       <Navbar />
       <div className="mt-[80px] md:mt-[30px] container mx-auto px-10 ">
       <StoriesBar/>
+      <RightSidebar/>
       </div>
     </div>
   );

@@ -20,6 +20,8 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-insta-stories": "^2.8.0",
+    "react-media-recorder": "^1.7.1",
+    "react-player": "^2.16.0",
     "react-redux": "^9.2.0",
     "react-simple-typewriter": "^5.0.1",
     "yup": "^1.6.1"
