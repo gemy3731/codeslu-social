@@ -88,7 +88,7 @@ const InputChat = () => {
             // value={recordingCount}
           />
           <div className=" flex items-center gap-6 absolute left-[50%] -translate-x-[50%] bottom-[7px]">
-            <h5 className="text-[14px] bg-[--main-color] text-[#fff] py-1 px-2 rounded-full">{recordingCount} sec</h5>
+            <h5 className="text-[14px] bg-[--main-color] text-[#fff] py-1 px-2 rounded-full">{recordingCount} s</h5>
           <Progress progress={recordingCount} color="pink" size="xl" className=" !bg-[#b1a9fb]   w-[300px]  " />
           </div>
           <div className="w-fit flex items-center gap-4 absolute right-[22px] bottom-[14px] text-[22px]">

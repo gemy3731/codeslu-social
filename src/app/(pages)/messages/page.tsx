@@ -10,6 +10,11 @@ interface IMessage {
   read: boolean;
   active: string;
 }
+interface IMessageBody {
+  person: string;
+  message: string;
+  time: string;
+}
 const messages: IMessage[] = [
   {
     name: "Mohamed",
@@ -44,21 +49,57 @@ const messages: IMessage[] = [
     active: "30min",
   },
 ];
+const messageBody: IMessageBody[] = [
+  {
+    person: "me",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+  {
+    person: "him",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+  {
+    person: "him",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+  {
+    person: "him",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+  {
+    person: "him",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+  {
+    person: "me",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+  {
+    person: "me",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+  {
+    person: "him",
+    message:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+    time: "1w",
+  },
+];
 const Page = () => {
-  // useEffect(() => {
-  //   const textarea = document.getElementById('auto-resize') as HTMLTextAreaElement;
-  //   const maxRows = 5; // Set your desired max number of rows
-
-  //   textarea.addEventListener('input', function () {
-  //     textarea.rows = 0; // Reset to one row
-  //     textarea.rows = Math.min(
-  //       Math.floor(textarea.scrollHeight / parseInt(getComputedStyle(textarea).lineHeight)),
-  //       maxRows
-  //     );
-  //   });
-
-  // }, [])
-
   return (
     <>
       <div className="flex">
@@ -130,8 +171,32 @@ const Page = () => {
               ></Image>
             </div>
           </nav>
-          <main className="px-8 py-4 flex flex-col justify-between  h-[calc(100vh-75px)]">
-            <InputChat />
+          <main className="px-8 py-4 flex flex-col justify-between overflow-hidden  h-[calc(100vh-75px)]">
+            <div
+              id="msg_content_body"
+              className=" flex-1 flex flex-col gap-4  overflow-y-auto pr-2 -mr-4"
+              style={{ maxHeight: "calc(100vh - 180px)" }}
+            >
+              <div className="mt-auto flex flex-col gap-4">
+                {messageBody.map((msg, i) => {
+                  return (
+                    <div key={i} className="flex flex-col gap-2 ">
+                      <div className={ `text-[14px] text-[#606060] ${msg.person === "me" ? "self-start ms-7" : "self-end me-7"}`}>{msg.time}</div>
+                      <div
+                        className={`bg-gradient-to-br from-[#4c42ab] to-[#8176e2] text-[#fff] w-fit rounded-full py-3 px-5 max-w-[70%] ${
+                          msg.person === "me" ? "self-start" : "self-end"
+                        }`}
+                      >
+                        {msg.message}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="mt-4 shrink-0">
+              <InputChat />
+            </div>
           </main>
         </div>
       </div>
