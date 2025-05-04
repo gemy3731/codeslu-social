@@ -10,7 +10,7 @@ const ProfileCard = () => {
     <div onClick={() => setIsOpen(true)} className='relative aspect-[0.75/1] overflow-hidden rounded-lg shadow-md'>
         <Image src={cardImg} alt='card image' className='aspect-[0.75/1] object-cover rounded-lg'></Image>
     </div>
-    {isOpen&&<ProfileModal img={cardImg} />}
+    {isOpen&&<ProfileModal setIsOpen={setIsOpen} img={cardImg} />}
     </>
   )
 }

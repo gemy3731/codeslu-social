@@ -310,11 +310,18 @@ div[role='progressbar'] > div > div{
   color: var(--main-color);
   border-bottom: 1px solid var(--main-color);
 }
-.tabsItems button:hover{
+.tabsItems button[type='button']:hover{
   background-color: no;
   color: var(--main-color) !important;
   border-color: transparent !important;
 }
 .focus\:ring-4:focus {
   --tw-ring-shadow: 0 !important;
+}
+#sendBtn:disabled{
+  color:#929292 !important;
+  cursor: not-allowed;
+}
+#followBtn:hover{
+  color: #fff !important;
 }

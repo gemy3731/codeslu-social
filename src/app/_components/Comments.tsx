@@ -4,7 +4,7 @@ import { CiHeart } from 'react-icons/ci'
 import { FaHeart } from 'react-icons/fa'
 import userImg from './../assets/profile.jpg'
 import Image from 'next/image'
-const Comments = () => {
+const Comments = ({setIsLikedModalOpen}:{setIsLikedModalOpen: (value: boolean) => void}) => {
     const [isLiked,setIsLiked] =useState(false);
   return (
     <div className='border-b border-[#eaeaea] py-4'>
@@ -19,7 +19,7 @@ const Comments = () => {
         </div>
         <div className='text-[#929292] text-[12px] hover:text-[#929292] px-6 mt-2 flex items-center gap-6'>
             <button disabled className='cursor-text hover:!text-[#929292]'>12w</button>
-            <button>1 Like</button>
+            <button onClick={() => setIsLikedModalOpen(true)}>1 Like</button>
         </div>
     </div>
   )

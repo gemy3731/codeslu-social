@@ -3,18 +3,23 @@ import Image, { StaticImageData } from "next/image";
 import userImg from "./../../assets/profile.jpg";
 import { HiDotsHorizontal } from "react-icons/hi";
 import Comments from "../Comments";
-import { FaBookmark, FaHeart, FaRegComment } from "react-icons/fa";
+import { FaBookmark, FaHeart } from "react-icons/fa";
 import { useState } from "react";
-import { PiShareFatBold } from "react-icons/pi";
-import { CgHeart } from "react-icons/cg";
+import {  PiShareFatThin } from "react-icons/pi";
 import { GoBookmark } from "react-icons/go";
-const ProfileModal = ({ img }: { img: StaticImageData }) => {
+import { IoClose } from "react-icons/io5";
+import InputChat from "../messages/InputChat";
+import { CiHeart } from "react-icons/ci";
+import LikesModal from "../LikesModal";
+const ProfileModal = ({ img, setIsOpen }: { img: StaticImageData; setIsOpen: (value: boolean) => void }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [isLikedModalOpen, setIsLikedModalOpen] = useState(false);
   return (
-    <div className="overflow-hidden bg-[#000000e3]  fixed top-0 left-0 right-0 bottom-0 z-[9999]">
+    <div className="overflow-hidden bg-[#000000b7]  fixed top-0 left-0 right-0 bottom-0 z-[9999]">
+        <div onClick={() => setIsOpen(false)} className="absolute top-10 right-10 text-[#fff] text-[24px] w-fit cursor-pointer"><IoClose /></div>
       <div className="container mx-auto px-[150px] py-10 ">
-        <div className="bg-white rounded-lg overflow-hidden grid grid-cols-2">
+        <div className="bg-[#f6faff] rounded-lg overflow-hidden grid grid-cols-2">
           <Image src={img} alt="post image" className="aspect-[0.8/1]"></Image>
           <div className="flex flex-col">
             <div className="flex items-center justify-between gap-2 p-5 border-b border-[#eaeaea]">
@@ -31,7 +36,7 @@ const ProfileModal = ({ img }: { img: StaticImageData }) => {
               </button>
             </div>
             <div className="p-5 flex flex-col gap-4">
-              <Comments />
+              <Comments setIsLikedModalOpen={setIsLikedModalOpen} />
             </div>
             <div className="mt-auto border-t border-[#eaeaea]">
               <div className="p-5">
@@ -43,13 +48,12 @@ const ProfileModal = ({ img }: { img: StaticImageData }) => {
                         className=" self-start cursor-pointer text-red-600"
                       />
                     ) : (
-                      <CgHeart
+                      <CiHeart
                         onClick={() => setIsLiked(true)}
                         className=" self-start cursor-pointer"
                       />
                     )}
-                    <FaRegComment className="cursor-pointer" />
-                    <PiShareFatBold className="cursor-pointer" />
+                    <PiShareFatThin className="cursor-pointer" />
                   </div>
                   {isSaved ? (
                       <FaBookmark
@@ -63,11 +67,19 @@ const ProfileModal = ({ img }: { img: StaticImageData }) => {
                       />
                     )}
                 </div>
+                <div className="mt-4 text-[14px]">
+                   <p>Liked by <span className="cursor-pointer font-bold">Mustafa bakr</span> and <span onClick={() => setIsLikedModalOpen(true)} className="font-bold cursor-pointer">31 others</span></p>
+                    <p className="text-[#929292] text-[12px]">April 24, 2022</p>
+                </div>
+              </div>
+              <div className=" border-t border-[#eaeaea] relative">
+                    <InputChat location="modal"/>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {isLikedModalOpen&& <LikesModal isLikedModalOpen={setIsLikedModalOpen} />}
     </div>
   );
 };

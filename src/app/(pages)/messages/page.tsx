@@ -206,7 +206,7 @@ const Page = () => {
               </div>
             </div>
             <div className="mt-4 shrink-0">
-              <InputChat />
+              <InputChat location="chat"/>
             </div>
           </main>
         </div>
