@@ -8,18 +8,30 @@ import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import ReactPlayer from "react-player";
 // import ReactPlayer from "react-player";
 
-// const urls: string[] = [
-//   "https://www.youtube.com/shorts/Bx7mzwE2yiE",
-//   "https://www.youtube.com/shorts/RNab-pKJr28",
-//   "https://www.youtube.com/shorts/KxAaSh77j7A",
-//   "https://www.youtube.com/shorts/evYRrsB0cas",
-// ];
+
+const reels = [
+  {
+    inView: false,
+    url: "https://www.youtube.com/shorts/Bx7mzwE2yiE",
+  },
+  {
+    inView: false,
+    url: "https://www.youtube.com/shorts/RNab-pKJr28",
+  },
+  {
+    inView: false,
+    url: "https://www.youtube.com/shorts/KxAaSh77j7A",
+  },
+  {
+    inView: false,
+    url: "https://www.youtube.com/shorts/evYRrsB0cas",
+  },
+]
 const Page = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [reelsState, setReelsState] = useState(reels);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    // initial: 0,
-    // loop: true,
     slides: {
       origin: 0,
       perView: 1,
@@ -27,10 +39,22 @@ const Page = () => {
     },
     vertical: true,
     slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
+      const currentIndex = slider.track.details.rel;
+      setCurrentSlide(currentIndex);
+      
+      // Update reels inView state
+      setReelsState(prev => prev.map((reel, index) => ({
+        ...reel,
+        inView: index === currentIndex
+      })));
     },
     created() {
       setLoaded(true);
+      // Set initial reel as in view
+      setReelsState(prev => prev.map((reel, index) => ({
+        ...reel,
+        inView: index === 0
+      })));
     },
   });
   // const handleNext = () => {
@@ -50,16 +74,20 @@ const Page = () => {
             className="keen-slider"
             style={{ height: "100vh" }}
           >
-            {[...Array(5)].map((_, i) => {
+            {reelsState.map((reel, i) => {
               return (
                 <div key={i} className="keen-slider__slide mx-auto">
                   <ReactPlayer 
                 width="500px"
                 height="100%"
                 className="mx-auto"
-                url={`https://www.youtube.com/embed/gvI8a74iXvg`}
-                playing={true}
+                url={reel.url}
+                playing={reel.inView}
                 id={`yt-player-${i}`}
+                // controls
+                onEnded={()=>{
+                  instanceRef.current?.next();
+                }}
               />
                 </div>
               );
@@ -72,7 +100,7 @@ const Page = () => {
                   e.stopPropagation();
                   instanceRef.current?.prev();
                 }}
-                className={`fixed top-[35%] right-[20%] rounded-full w-[40px] h-[40px] flex items-center justify-center text-[#000] ${
+                className={`fixed top-[35%] right-[20%] rounded-full w-[40px] h-[40px] flex items-center justify-center text-[#fff] bg-[--main-color] p-2 box-content ${
                   currentSlide === 0 ? "hidden" : ""
                 }`}
               />
@@ -82,7 +110,7 @@ const Page = () => {
                   e.stopPropagation();
                   instanceRef.current?.next();
                 }}
-                className={`fixed top-[65%] right-[20%] rounded-full w-[40px] h-[40px] flex items-center justify-center text-[#000] ${
+                className={`fixed top-[65%] right-[20%] rounded-full  w-[40px] h-[40px] flex items-center justify-center text-[#fff] bg-[--main-color] p-2 box-content ${
                   currentSlide ===
                   instanceRef.current.track.details.slides.length - 1
                     ? "hidden"
