@@ -1,8 +1,10 @@
+"use client";
 import img from "./../../assets/profile.jpg";
 import Image from "next/image";
 import videoImg from "./../../assets/zoom.png";
 import phoneImg from "./../../assets/phone-call.png";
 import InputChat from "@/app/_components/messages/InputChat";
+import { useEffect, useRef } from "react";
 interface IMessage {
   name: string;
   message: string;
@@ -53,7 +55,7 @@ const messageBody: IMessageBody[] = [
   {
     person: "me",
     message:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.1",
     time: "1w",
   },
   {
@@ -71,7 +73,7 @@ const messageBody: IMessageBody[] = [
   {
     person: "him",
     message:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, doloribus.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus,",
     time: "1w",
   },
   {
@@ -100,6 +102,13 @@ const messageBody: IMessageBody[] = [
   },
 ];
 const Page = () => {
+  const chatContainerRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const container = chatContainerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
+  }, []);
   return (
     <>
       <div className="flex">
@@ -174,20 +183,22 @@ const Page = () => {
           <main className="px-8 py-4 flex flex-col justify-between overflow-hidden  h-[calc(100vh-75px)]">
             <div
               id="msg_content_body"
+              ref={chatContainerRef}
               className=" flex-1 flex flex-col gap-4  overflow-y-auto pr-2 -mr-4"
               style={{ maxHeight: "calc(100vh - 180px)" }}
             >
-              <div className="mt-auto flex flex-col gap-4">
-                {messageBody.map((msg, i) => {
+              <div  className=" flex flex-col justify-end gap-4">
+                {messageBody.reverse().map((msg, i) => {
                   return (
-                    <div key={i} className="flex flex-col gap-2 ">
-                      <div className={ `text-[14px] text-[#606060] ${msg.person === "me" ? "self-start ms-7" : "self-end me-7"}`}>{msg.time}</div>
+                    <div key={i} className="flex flex-col gap-2">
+                      
                       <div
-                        className={`bg-gradient-to-br from-[#4c42ab] to-[#8176e2] text-[#fff] w-fit rounded-full py-3 px-5 max-w-[70%] ${
-                          msg.person === "me" ? "self-start" : "self-end"
+                        className={`bg-gradient-to-br from-[#4c42ab] to-[#8176e2] relative text-[#fff] w-fit rounded-full py-3 px-5 pb-7 max-w-[70%] ${
+                          msg.person === "me" ? "self-end" : "self-start"
                         }`}
                       >
                         {msg.message}
+                        <span className={ `text-[12px] text-[#fff] absolute bottom-1 right-8`}>{msg.time}</span>
                       </div>
                     </div>
                   );
