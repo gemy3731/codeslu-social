@@ -305,3 +305,16 @@ div[role='progressbar'] > div > div{
   /* transform: translateY(-50%); */
   font-size: 22px;
 }
+.tabsItems button[aria-selected="true"]{
+  background-color: transparent;
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+.tabsItems button:hover{
+  background-color: no;
+  color: var(--main-color) !important;
+  border-color: transparent !important;
+}
+.focus\:ring-4:focus {
+  --tw-ring-shadow: 0 !important;
+}
