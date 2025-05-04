@@ -18,9 +18,9 @@ const page = () => {
                 </div>
                 {/* no. of posts, followers, following */}
                 <div className='flex items-center justify-start gap-8 mt-6'>
-                    <button className='cursor-text'>8 <span className='text-[#ada4ff]'>Posts</span></button>
-                    <button>250 <span className='text-[#ada4ff]'>Followers</span></button>
-                    <button>864 <span className='text-[#ada4ff]'>Following</span></button>
+                    <button className='cursor-text'>8 <span className='text-[#929292]'>Posts</span></button>
+                    <button>250 <span className='text-[#929292]'>Followers</span></button>
+                    <button>864 <span className='text-[#929292]'>Following</span></button>
                 </div>
                 {/* bio */}
                 <div className='mt-6 text-[14px]'>
