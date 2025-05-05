@@ -291,9 +291,9 @@ button[aria-label="Close"]:hover{
 .sectionHeader{
   font-size: 2rem;
   font-weight: 600;
-  background-clip: text;
-  color:transparent;
-  background-image: var(--header-gradient);
+  /* background-clip: text; */
+  color:var(--main-color);
+  /* background-image: var(--header-gradient); */
 }
 div[role='progressbar'] > div > div{
   background-color:var(--main-color) ;

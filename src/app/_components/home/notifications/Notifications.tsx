@@ -91,7 +91,7 @@ const Notifications = () => {
                     className={
                       notification.status == "following"
                         ? "bg-[#686868] hover:bg-[#7e7e7e] text-white py-2 px-4 rounded-full"
-                        : "bg-[#4c42ab] hover:bg-[#6155d2] text-white py-2 px-4 rounded-full"
+                        : "bg-[--main-color] hover:bg-[#6155d2] text-white py-2 px-4 rounded-full"
                     }
                   >
                     {notification.status == "following"
