@@ -7,6 +7,8 @@ import { GrEmoji, GrGallery } from "react-icons/gr";
 import { LuMic, LuSend, LuSendHorizontal } from "react-icons/lu";
 import { RxResume } from "react-icons/rx";
 import { useReactMediaRecorder } from "react-media-recorder";
+
+// location ==> chat | modal
 const InputChat = ({ location }: { location: string }) => {
   const [isTyping, setIsTyping] = useState<boolean>(false);
   const [recordingCount, setRecordingCount] = useState<number>(0);
@@ -150,7 +152,7 @@ const InputChat = ({ location }: { location: string }) => {
             id="auto-resize"
             rows={1}
             autoFocus
-            className={`${location === "chat" ? "rounded-[30px] " : "border-0 "} w-full resize-none relative pl-12 pr-16  py-3 border-[#8989892b] bg-[#f6faff] row-span-5 overflow-hidden ring-0 focus:ring-0 focus:outline-none focus:border-[#8989892b] text-[16px] text-[#000000] placeholder:text-[#898989]`}
+            className={`${location === "chat" ? "rounded-[30px] " : "border-0 "} ${location === "post" ? "bg-[#fff]" : ""} w-full resize-none relative pl-12 pr-16  py-3 border-[#8989892b] bg-[#f6faff] row-span-5 overflow-hidden ring-0 focus:ring-0 focus:outline-none focus:border-[#8989892b] text-[16px] text-[#000000] placeholder:text-[#898989]`}
             placeholder={location === "chat" ? "Message..." : "Add a comment..."}
             onChange={handleChange}
           />
@@ -193,7 +195,7 @@ const InputChat = ({ location }: { location: string }) => {
               )}
             </div>
           )}
-          {location === "modal" && (
+          {location === "modal" || location === "post"&& (
             <div className="w-fit flex items-center gap-4 absolute right-[22px] bottom-[18px] text-[22px]">
               <button
                 id="sendBtn"
