@@ -8,7 +8,7 @@ import HomeComment from "./HomeComment";
 
 const Post = () => {
   return (
-    <div className="max-w-[55%] mx-auto bg-white rounded-2xl px-4 pt-4 flex flex-col gap-4">
+    <div className="max-w-[60%] mx-auto bg-white rounded-2xl px-4 pt-4 flex flex-col gap-4">
       <div id="postHeader">
         <div className="flex justify-between items-center gap-2">
           <div className="flex items-center gap-2">
@@ -27,16 +27,18 @@ const Post = () => {
         </div>
       </div>
       <div id='postDesc'>
-        <p className="text-[14px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus laudantium a eligendi sunt quibusdam, illo mollitia nemo ducimus fugit est ipsam beatae odit ex debitis error corporis ullam deserunt reiciendis.</p>
+        <p className="text-[13px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus laudantium a eligendi sunt quibusdam, illo mollitia nemo ducimus fugit est ipsam beatae odit ex debitis error corporis ullam deserunt reiciendis.</p>
       </div>
       <div id='postMedia'>
-        <Image src={postImg} alt="post image" className="w-full rounded-2xl object-cover" ></Image>
+        {/* <Image id="postImg" src={postImg} alt="post image" className="w-full rounded-2xl object-cover" ></Image> */}
+        <Image id="postImg" src={postImg} alt="post image" className="w-full rounded-2xl object-cover" ></Image>
+
       </div>
       <div id="postInterActive">
         <InterActivePost/>
       </div>
       <div id='postLikes'>
-        <h5>165 Likes</h5>
+        <h5 className="text-[12px]">165 Likes</h5>
       </div>
       <div id="postComments">
         <HomeComment postImg={postImg}/>

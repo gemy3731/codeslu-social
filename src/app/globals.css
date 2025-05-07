@@ -325,3 +325,20 @@ div[role='progressbar'] > div > div{
 #followBtn:hover{
   color: #fff !important;
 }
+#postMedia{
+  display: grid;
+  width: 100%;
+  gap: 10px;
+}
+#postMedia:has(> img#postImg:nth-child(4)) {
+  grid-template-columns: repeat(4, 1fr);
+}
+#postMedia:has(> img#postImg:nth-child(3)) {
+  grid-template-columns: repeat(4, 1fr);
+}
+#postMedia:has(> img#postImg:nth-child(2)) {
+  grid-template-columns: repeat(2, 1fr);
+}
+#postMedia:has(> img#postImg:nth-child(1):only-child) {
+  grid-template-columns: 1fr;
+}

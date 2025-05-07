@@ -13,7 +13,7 @@ const HomeComment = ({postImg}:{postImg:StaticImageData}) => {
     <div>
       <Comments setIsLikedModalOpen={setIsLikedModalOpen} />
       {isLikedModalOpen&& <LikesModal isLikedModalOpen={setIsLikedModalOpen} />}
-      <button onClick={() => setIsOpen(true)} className="text-[#929292] mt-1">View all 95 comments</button>
+      <button onClick={() => setIsOpen(true)} className="text-[#929292] mt-1 text-[14px]">View all 95 comments</button>
       {isOpen&&<ProfileModal setIsOpen={setIsOpen} img={postImg} />}
       <div className="mt-3">
       <InputChat location="post"/>
